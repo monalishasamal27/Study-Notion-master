@@ -7,6 +7,8 @@ exports.connect = () => {
         process.exit(1);
     }
 
+    console.log('mongodb_uri', process.env.MONGODB_URL);
+
     mongoose.connect(process.env.MONGODB_URL, {
         useNewUrlParser: true,
         useUnifiedTopology:true,

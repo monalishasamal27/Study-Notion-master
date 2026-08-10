@@ -11,10 +11,16 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const {cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
+const dns = require("dns");
 const dotenv = require("dotenv");
 
 dotenv.config();
 const PORT = process.env.PORT || 4000;
+
+
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
+dns.setDefaultResultOrder("ipv4first");
+require("dotenv").config();
 
 //database connect
 database.connect();
